@@ -12,7 +12,7 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql(@"Host=localhost;Port=49153;Username=postgres;Password=postgrespw;Database=projectcv");
+        => optionsBuilder.UseNpgsql(AppConfiguration.DefaultDbConnection);
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
