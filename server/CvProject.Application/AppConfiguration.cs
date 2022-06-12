@@ -7,7 +7,7 @@ public static class AppConfiguration
     private static IConfigurationRoot appConfiguration = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appsettings.json", false, true)
-        .AddJsonFile("appsettings.Development.json", true, true)
+        .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", true, true)
         .Build();
 
     public static string DefaultDbConnection { get => appConfiguration["ConnectionStrings:DefaultConnection"]; }

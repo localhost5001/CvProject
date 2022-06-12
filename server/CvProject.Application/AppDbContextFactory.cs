@@ -8,7 +8,7 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     public AppDbContext CreateDbContext(string[] args) 
     {
         Console.WriteLine(AppConfiguration.DefaultDbConnection);
-        Console.WriteLine(Directory.GetCurrentDirectory());
+        Console.WriteLine(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"));
 
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
