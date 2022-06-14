@@ -10,5 +10,10 @@ export default defineConfig({
   plugins: [
     vue(), 
     Components({ resolvers: [Vuetify3Resolver()] })
-  ]
+  ],
+  resolve: {
+    alias: [
+      { find: '@', replacement: '/src' }
+    ]
+  }
 })
