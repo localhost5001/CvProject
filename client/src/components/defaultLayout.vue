@@ -5,7 +5,7 @@
                 <v-btn icon="person"></v-btn>
             </template>
         </v-app-bar>
-        <v-main>
+        <v-main class="grey lighten-3">
             <slot></slot>
         </v-main>
     </v-layout>
