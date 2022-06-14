@@ -1,4 +1,5 @@
 using System.Text;
+using CvProject.Application.Configuration;
 using CvProject.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;

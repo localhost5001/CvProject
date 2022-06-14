@@ -1,4 +1,4 @@
-namespace CvProject.Application;
+namespace CvProject.Application.Configuration;
 
 public record JwtConfiguration
 {
