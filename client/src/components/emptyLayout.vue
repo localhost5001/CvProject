@@ -1,4 +1,7 @@
 <template>
-    <div>empty layout</div>
-    <slot></slot>
+    <v-layout>
+        <v-main>
+            <slot></slot>
+        </v-main>
+    </v-layout>
 </template>
