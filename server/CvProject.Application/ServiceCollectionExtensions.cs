@@ -1,4 +1,5 @@
 using System.Text;
+using CvProject.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,9 +11,11 @@ namespace CvProject.Application
     {
         public static void AddAppServices(this IServiceCollection services) 
         {
+            services.AddDbContext<AppDbContext>();
+
             services
-                .AddDbContext<AppDbContext>()
                 .AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
             services
@@ -33,6 +36,8 @@ namespace CvProject.Application
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secret"))
                     };
                 });
+            
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }
