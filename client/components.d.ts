@@ -10,7 +10,20 @@ declare module '@vue/runtime-core' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VAppBar: typeof import('vuetify/components')['VAppBar']
     VBtn: typeof import('vuetify/components')['VBtn']
+    VCard: typeof import('vuetify/components')['VCard']
+    VCardActions: typeof import('vuetify/components')['VCardActions']
+    VCardText: typeof import('vuetify/components')['VCardText']
+    VCardTitle: typeof import('vuetify/components')['VCardTitle']
+    VCol: typeof import('vuetify/components')['VCol']
+    VContainer: typeof import('vuetify/components')['VContainer']
+    VContent: typeof import('vuetify/components')['VContent']
+    VIcon: typeof import('vuetify/components')['VIcon']
+    VLayout: typeof import('vuetify/components')['VLayout']
+    VMain: typeof import('vuetify/components')['VMain']
+    VRow: typeof import('vuetify/components')['VRow']
+    VTextField: typeof import('vuetify/components')['VTextField']
   }
 }
 

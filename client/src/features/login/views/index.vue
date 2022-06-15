@@ -1,4 +1,20 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { authApi } from '@/common/api'
+
+const router = useRouter()
+
+const userName = ref('')
+const password = ref('')
+
+const onLoginClick = async () => {
+    await authApi.login({
+        userName: userName.value,
+        password: password.value,
+    })
+    router.push('/')
+}
 
 </script>
 
@@ -10,19 +26,19 @@
             </v-card-text>
             <v-card-text>
                 <v-text-field 
-                    hint="User Name"
+                    v-model="userName"
                     label="User name"
                     variant="outlined"
                 />
 
-                <v-text-field 
-                    hint="Password"
+                <v-text-field
+                    v-model="password"
                     label="Password"
                     type="password"
                     variant="outlined"
                 />
 
-                <v-btn block variant="contained-flat" color="primary">
+                <v-btn block variant="contained-flat" color="primary" @click="onLoginClick">
                     Login
                 </v-btn>
                 <v-btn block variant="plain">
